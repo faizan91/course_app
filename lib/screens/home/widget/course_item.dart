@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../detail/detail.dart';
+
 class CourseItem extends StatelessWidget {
   final Course course;
   CourseItem(this.course);
@@ -98,7 +100,10 @@ class CourseItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => DetailPage(course)));
+              },
               child: Text('start'),
             ),
           ),
